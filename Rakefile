@@ -9,7 +9,17 @@ desc 'outputs hello to the terminal'
     puts "hola de Rake!"
   end
 end
+
+namespace :db do
  
+  ...
+ 
+  desc 'seed the database with some dummy data'
+  task :seed do
+    require_relative './db/seeds.rb'
+  end
+end
+
 task :environment do
   require_relative './config/environment'
 end
@@ -26,12 +36,3 @@ task :console => :environment do
   Pry.start
 end
 
-namespace :db do
- 
-  ...
- 
-  desc 'seed the database with some dummy data'
-  task :seed do
-    require_relative './db/seeds.rb'
-  end
-end
