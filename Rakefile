@@ -11,7 +11,6 @@ desc 'outputs hello to the terminal'
 end
 
 
-
 task :environment do
   require_relative './config/environment'
 end
